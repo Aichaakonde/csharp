@@ -1,0 +1,22 @@
+@model List<Absence>
+
+    <h2>Liste des Absences</h2>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date d'absence</th>
+                <th>Cours</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var absence in Model)
+            {
+                <tr>
+                    <td>@absence.Date.ToShortDateString()</td>
+                    <td>@absence.Cours.Nom</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    

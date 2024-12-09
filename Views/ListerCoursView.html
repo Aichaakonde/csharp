@@ -1,0 +1,26 @@
+@model List<Cours>
+
+    <h2>Liste des Cours</h2>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom du Cours</th>
+                <th>Date</th>
+                <th>Heure de début</th>
+                <th>Heure de fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cours in Model)
+            {
+                <tr>
+                    <td>@cours.Nom</td>
+                    <td>@cours.Date.ToShortDateString()</td>
+                    <td>@cours.HeureDebut.ToString(@"hh\:mm")</td>
+                    <td>@cours.HeureFin.ToString(@"hh\:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
